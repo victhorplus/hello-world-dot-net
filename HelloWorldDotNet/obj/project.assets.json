@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/victhor/Dev/hello-world-dot-net/HelloWorldDotNet/HelloWorldDotNet/HelloWorldDotNet.csproj",
+      "projectUniqueName": "/Users/victhor/Dev/hello-world-dot-net/HelloWorldDotNet/HelloWorldDotNet.csproj",
       "projectName": "HelloWorldDotNet",
-      "projectPath": "/Users/victhor/Dev/hello-world-dot-net/HelloWorldDotNet/HelloWorldDotNet/HelloWorldDotNet.csproj",
+      "projectPath": "/Users/victhor/Dev/hello-world-dot-net/HelloWorldDotNet/HelloWorldDotNet.csproj",
       "packagesPath": "/Users/victhor/.nuget/packages/",
-      "outputPath": "/Users/victhor/Dev/hello-world-dot-net/HelloWorldDotNet/HelloWorldDotNet/obj/",
+      "outputPath": "/Users/victhor/Dev/hello-world-dot-net/HelloWorldDotNet/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/victhor/.nuget/NuGet/NuGet.Config"
