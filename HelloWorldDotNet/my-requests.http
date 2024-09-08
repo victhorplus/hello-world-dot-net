@@ -11,14 +11,14 @@ POST http://localhost:5123/todos
 Content-Type: application/json
 
 {
-    "id": 2,
+    "id": 1,
     "name": "Estudar WEB Api 1",
-    "dueDate": "2024-09-08T00:00:00",
-    "isCompleted": true
+    "dueDate": "2024-09-09T00:00:00",
+    "isCompleted": false
 }
 
 ###
-DELETE http://localhost:5123/todos/2
+DELETE http://localhost:5123/todos/1
 ###
 
 GET http://localhost:5123/tasks/2
