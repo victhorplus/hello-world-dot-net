@@ -1,16 +1,21 @@
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Rewrite;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
 var todos = new List<Todo>();
 
-app.MapGet("/", (HttpContext req) => {
-
-    return TypedResults.Ok("Hello World!");
+app.UseRewriter(new RewriteOptions().AddRedirect("tasks/(.*)", "todos/$1"));
+app.Use(async (context, next) => {
+    Console.WriteLine($"[{context.Request.Method} {context.Request.Path} {DateTime.UtcNow}] Started.");
+    next(context);
+    Console.WriteLine($"[{context.Request.Method} {context.Request.Path} {DateTime.UtcNow}] Finished.");
 });
 
-app.MapGet("/todos", () => todos);
+app.MapGet("/", () => TypedResults.Ok("Hello World!"));
+
+app.MapGet("/todos", () => TypedResults.Ok(todos));
 
 app.MapGet("/todos/{id}", Results<Ok<Todo>, NotFound> (int id) => {
     Todo targetTask = todos.SingleOrDefault(task => task.id == id);
@@ -24,7 +29,7 @@ app.MapPost("/todos", (Todo task) => {
     return TypedResults.Created($"/todos/{task.id}", task);
 });
 
-app.MapDelete("todos/{id}", (int id) => {
+app.MapDelete("/todos/{id}", (int id) => {
     todos.RemoveAll(task => task.id == id);
     return TypedResults.NoContent();
 });

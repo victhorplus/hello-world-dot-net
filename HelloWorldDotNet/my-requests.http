@@ -4,19 +4,21 @@ GET http://localhost:5123
 GET http://localhost:5123/todos
 
 ###
-GET http://localhost:5123/todos/124
+GET http://localhost:5123/todos/1
 
 ###
 POST http://localhost:5123/todos
 Content-Type: application/json
 
 {
-    "id": 126,
-    "name": "Estudar WEB Api 2",
+    "id": 1,
+    "name": "Estudar WEB Api 1",
     "dueDate": "2024-08-08T00:00:00",
     "isCompleted": false
 }
 
 ###
-DELETE http://localhost:5123/todos/124
-Content-Type: application/json
+DELETE http://localhost:5123/todos/2
+###
+
+GET http://localhost:5123/tasks/2
